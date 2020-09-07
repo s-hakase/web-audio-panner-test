@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: './',
+  publicPath: '/web-audio-panner-test/',
   outputDir: './docs'
 }
