@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Controls @play="play" @pause="pause" />
+    <Room :x="500" :y="500" ref="room" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Room from './components/Room.vue'
+import Controls from './components/Controls.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Room,
+    Controls
+  },
+
+  methods: {
+    play() {
+      this.$refs["room"].play()
+    },
+    pause() {
+      this.$refs["room"].pause()
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
